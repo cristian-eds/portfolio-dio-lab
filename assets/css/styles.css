@@ -19,3 +19,11 @@
     vertical-align: baseline;
     list-style: none;
 }
+
+body {
+    background-color: var(--primary-bg-color);
+}
+
+i {
+    color: var(--icon-color);
+}
