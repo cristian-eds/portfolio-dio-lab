@@ -22,7 +22,7 @@
     --primary-bg-color: #E9E9E9;
     --secondary-bg-color: #C7C8C9;
     --border-color: #C7C8C9;
-    --secondary-border-color: #C7C8C9;
+    --secondary-border-color: #9A9A9C;
 
     --title-color: #0B0B0F;
     --text-color: #28292E;
@@ -31,9 +31,15 @@
 
 }
 
-html[data-theme='light'] .brand__logo{
+html[data-theme='light'] .brand__logo{ 
     filter: invert(1);
 }
+
+html[data-theme='light'] .skills__list{
+    filter: invert(80%);
+}
+
+
 
 
 * {
@@ -72,6 +78,13 @@ h1 {
     font-weight: 200;
 }
 
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: .4rem;
+}
+
 h1,h2,h3 {
     font-family: 'League Spartan', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
@@ -82,6 +95,11 @@ h1,h2,h3 {
 p {
     font-size: 1.25rem;
     text-align: justify;
+    color: var(--text-color);
+}
+
+li {
+    color: var(--text-color);
 }
 
 .header {
@@ -167,11 +185,14 @@ p {
     gap: 1rem;
 }
 
+main, .projects {
+    padding: 2.5rem 1rem;
+}
+
 main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 2.5rem 1rem;
 }
 
 .menu--social {
@@ -185,11 +206,13 @@ main {
     gap: 0.625rem;
     align-items: center;
     width: 100%;
+    border: none;
     background: transparent;
     border-radius: 3.125rem;
     padding: 0.875rem 1.5rem;
     transition: ease-in-out .3s;
     cursor: pointer;
+    color: var(--primary-color);
 }
 
 .main__content1 {
@@ -208,7 +231,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 6.25rem 1rem 2rem 1rem;
+    padding: 6.25rem 1rem 2rem;
     background: var(--secondary-bg-color);
     margin-top: -5.5rem;
     gap: 1.25rem;
@@ -222,7 +245,6 @@ main {
 .skills__list {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
     gap: .5rem;
 }
 
@@ -241,6 +263,57 @@ main {
 .skills__logo {
     height: 2.4rem;
     filter: grayscale(100%);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column; 
+}
+
+.projects__card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card__cover {
+    width: 100%;
+    border-radius: .5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+
+.card__title {
+    font-size: 1.5rem;
+}
+
+.card_description {
+    font-size:1rem;
+    color: var(--title-color);
+}
+
+.card__buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.card__body .skills__item {
+    width: 4rem;
+    height: 4rem;
+}
+
+.card__body .skills__logo {
+    height: 2rem;
 }
 
 .btn span, .btn i{
@@ -296,8 +369,12 @@ footer p {
         font-size: 4rem;
     }
     
-    main {
+    main, .projects {
         padding: 8rem 6rem 4rem 6rem;
+    }
+
+    h2 {
+        font-size: 3rem;
     }
 
     .main__content1 {
@@ -314,12 +391,35 @@ footer p {
     footer {
         margin: 0;
     }
+
+    .main__content2 iframe { 
+        height: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .projects__card {
+        flex-direction: row;
+    }
+
+    .projects__card.card--reverse {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .card__cover {
+        width: 55%;
+    }
 }
 
 @media (min-width: 1200px) {
 
     main {
         padding: 12rem 6rem 2rem;
+    }
+
+    h2 {
+        font-size: 4rem;
     }
 
     .main__content1 .btn {
@@ -349,12 +449,36 @@ footer p {
     .skills__logo {
         height: 3rem;
     }
+
+    .projects__card {
+        flex-direction: row;
+    }
+
+    .card__cover {
+        width: 50%;
+    }
+
+    .card__title {
+        font-size: 3.25rem;
+    }
+
+    .card__description, .card__item {
+        font-size: 1.25rem;
+    }
+
+    .card__buttons .btn {
+        width: auto;
+    }
 }
 
 @media (min-width: 1400px) {
 
     h1 {
         font-size: 6.25rem;
+    }
+
+    h2 {
+        font-size: 5rem;
     }
     
     p {
@@ -369,8 +493,12 @@ footer p {
         padding: 12rem 15rem 2rem;
     }
 
-    .skills {
+    .skills, .projects {
         padding: 10rem 15rem 4rem;
+    }
+
+    .card__cover {
+        height: 90%;
     }
 }
 
