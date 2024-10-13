@@ -423,6 +423,27 @@ main {
     transform: rotate(180deg);
 }
 
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1.2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.contact p {
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 0;
+}
+
+.contact .btn span{
+    text-transform: lowercase;
+}
+
 .btn span, .btn i{
     font-size: 1.25rem;
     text-transform: uppercase;
@@ -480,7 +501,7 @@ footer p {
         padding: 8rem 6rem 4rem;
     }
 
-    .about {
+    .about, .contact {
         padding: 2rem 6rem 2rem;
     }
 
@@ -541,6 +562,10 @@ footer p {
     .about__content2 .col1, .col2 {
         width: 50%;
     }
+
+    .contact .btn {
+        width: 50%;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -555,6 +580,10 @@ footer p {
 
     .main__content1 .btn {
         width: auto;
+    }
+
+    .menu__text {
+        font-size: 1rem;
     }
 
     .skills {
@@ -629,7 +658,7 @@ footer p {
     }
 
     .skills, .projects {
-        padding: 10rem 15rem 4rem;
+        padding: 12rem 15rem 4rem;
     }
 
     .about {
