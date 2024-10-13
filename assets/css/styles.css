@@ -657,12 +657,8 @@ footer p {
         padding: 12rem 15rem 2rem;
     }
 
-    .skills, .projects {
+    .skills, .projects, .about, .contact {
         padding: 12rem 15rem 4rem;
-    }
-
-    .about {
-        padding: 5rem 15rem 4rem;
     }
 
     .card__cover {
