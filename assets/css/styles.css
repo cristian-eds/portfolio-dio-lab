@@ -222,9 +222,14 @@ main {
     gap: 1.5rem;
 }
 
-.main__content2 iframe {
-    width: 100%;
-    aspect-ratio: 16/9;
+.main__content2 {
+    display: flex;
+}
+
+.main__content2 img {
+    height: 650px;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
 }
 
 .skills {
